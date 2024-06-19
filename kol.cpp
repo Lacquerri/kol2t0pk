@@ -40,18 +40,18 @@ private:
 	static Ksiazka* wzorzec;
 public:
 	virtual double cena() { return ((double)get_strony()); }
-	//																		KONSTRUKTORY
+
 	Ksiazka() {
-		assert(wzorzec != nullptr); //////////
+		assert(wzorzec != nullptr); 
 		set_all(wzorzec->get_tytul(), wzorzec->get_strony(), wzorzec->get_dostep(), wzorzec->get_Autor());
 	};
 
 	Ksiazka(const char* nowyTytul, int ilosc, Dostepnosc nowyDostep, Autor* nowyAutor) {
-		assert(nowyAutor != nullptr); //////////
+		assert(nowyAutor != nullptr); 
 		set_all(nowyTytul, ilosc, nowyDostep, nowyAutor);
 	};
 
-	//																		SETERY
+
 	void set_tytul(const char* nowyTytul) {
 		assert(nowyTytul != nullptr);
 		tytul = nowyTytul;
@@ -78,7 +78,7 @@ public:
 		set_Autor(nowyAutor);
 	}
 
-	//																		GETERY
+	
 	const char* get_tytul() const { return tytul; }
 	int get_strony() { return strony; }
 	Dostepnosc get_dostep() { return dostep; }
@@ -89,10 +89,10 @@ public:
 		const char* title = get_tytul();
 
 		return (title);
-
+	// ze wzgledu na mala ilosc czasu konwersja nie jest na tyle funkcjonalna na ile bym chcial
 	}
 
-	bool operator==(Ksiazka& ksi) // str autor dostep
+	bool operator==(Ksiazka& ksi)
 	{
 
 		if (this != &ksi) {
